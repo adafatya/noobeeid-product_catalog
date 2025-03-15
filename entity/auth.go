@@ -11,5 +11,6 @@ func NewAuth(email, password string) Auth {
 	return Auth{
 		Email:    email,
 		Password: password,
+		Role:     "merchant",
 	}
 }
