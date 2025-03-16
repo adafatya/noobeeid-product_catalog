@@ -35,6 +35,7 @@ func migrate(db *sqlx.DB) {
 	_, err = db.Exec(`
 		CREATE TABLE IF NOT EXISTS products (
 			id SERIAL PRIMARY KEY,
+			merchant_id INT NOT NULL REFERENCES auth (id),
 			name VARCHAR(100) NOT NULL,
 			stock SMALLINT NOT NULL,
 			price INT NOT NULL,
