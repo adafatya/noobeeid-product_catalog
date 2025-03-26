@@ -13,7 +13,7 @@ func NewAuthRouter(h AuthHandlerInterface) AuthRouter {
 }
 
 func (r AuthRouter) Route(app *fiber.App) {
-	auth := app.Group("/auth")
-	auth.Post("/register", r.h.Register)
-	auth.Post("/login", r.h.Login)
+	v1 := app.Group("/v1/auth")
+	v1.Post("/register", r.h.Register)
+	v1.Post("/login", r.h.Login)
 }
