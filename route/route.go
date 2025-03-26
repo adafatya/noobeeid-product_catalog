@@ -9,6 +9,8 @@ type RouterInterface interface {
 func Route(
 	app *fiber.App,
 	authRouter RouterInterface,
+	categoryRouter RouterInterface,
 ) {
 	authRouter.Route(app)
+	categoryRouter.Route(app)
 }
